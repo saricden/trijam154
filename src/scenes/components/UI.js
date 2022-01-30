@@ -70,7 +70,7 @@ class UI extends Scene {
         this.parentScene.npc.animationOverride = true;
         this.parentScene.npc.play({ key: 'npc-death', frameRate: 6, repeat: 0 });
 
-        this.parentScene.cameras.main.zoomTo(2, 3000, 'Linear', true, (cam, prog) => {
+        this.parentScene.cameras.main.zoomTo(1.5, 4000, 'Linear', true, (cam, prog) => {
           if (prog === 1) {
             this.parentScene.scene.start('scene-level1');
             this.scene.stop(this);
@@ -90,7 +90,7 @@ class UI extends Scene {
                 alpha: 0,
                 duration: 500,
                 onComplete: () => {
-                  this.parentScene.cameras.main.zoomTo(2, 3000, 'Linear', true, (cam, prog) => {
+                  this.parentScene.cameras.main.zoomTo(1.5, 4000, 'Linear', true, (cam, prog) => {
                     if (prog === 1) {
                       this.parentScene.scene.start(`scene-level5c`);
                       this.scene.stop(this);
@@ -128,7 +128,7 @@ class UI extends Scene {
         this.parentScene.npc.animationOverride = true;
         this.parentScene.npc.play({ key: 'npc-attack', repeat: -1 });
 
-        this.parentScene.cameras.main.zoomTo(2, 3000, 'Linear', true, (cam, prog) => {
+        this.parentScene.cameras.main.zoomTo(1.5, 4000, 'Linear', true, (cam, prog) => {
           if (prog === 1) {
             this.parentScene.scene.start(`scene-${this.option1Key}`);
             this.scene.stop(this);

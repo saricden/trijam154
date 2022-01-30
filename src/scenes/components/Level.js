@@ -80,11 +80,11 @@ class Level extends Scene {
     this.physics.add.collider(this.player, this.mapGround);
 
     // Camera config
-    this.cameras.main.setZoom(2);
+    this.cameras.main.setZoom(1.5);
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
     this.cameras.main.startFollow(this.player);
 
-    this.cameras.main.zoomTo(3, 3000);
+    this.cameras.main.zoomTo(2, 4000);
     this.cameras.main.flash(3000);
 
     // Launch UI

@@ -33,6 +33,9 @@ import sfxFlames from '../assets/audio/foom_0.wav';
 import merchPNG from '../assets/sprites/Samurai Merchant.png';
 import merchJSON from '../assets/sprites/Samurai Merchant.json';
 import fart from '../assets/audio/whoopee_2.wav';
+import goldCoin from '../assets/sprites/01coin.png';
+import sfxCoin from '../assets/audio/completetask_0.mp3';
+import coinIcon from '../assets/ui/coin-icon.png';
 
 class BootScene extends Scene {
   constructor() {
@@ -47,6 +50,10 @@ class BootScene extends Scene {
       frameHeight: 24
     });
     this.load.aseprite('merch', merchPNG, merchJSON);
+    this.load.spritesheet('coin', goldCoin, {
+      frameWidth: 120,
+      frameHeight: 120
+    });
 
     // Map stuff
     this.load.image('tileset-rabite', tilesetRabite);
@@ -77,6 +84,10 @@ class BootScene extends Scene {
     this.load.audio('sfx-spell5', spell5);
     this.load.audio('sfx-flames', sfxFlames);
     this.load.audio('sfx-fart', fart);
+    this.load.audio('sfx-coin', sfxCoin);
+
+    // UI
+    this.load.image('coin-icon', coinIcon);
 
     // Preloader
     this.loader = this.add.text(window.innerWidth / 2, window.innerHeight / 2, '0%', {
@@ -115,6 +126,13 @@ class BootScene extends Scene {
       repeat: -1
     });
 
+    this.anims.create({
+      key: 'coin-spin',
+      frames: this.anims.generateFrameNumbers('coin', { start: 0, end: 7 }),
+      frameRate: 18,
+      repeat: -1
+    });
+
     // Resize / reposition UI elements for screen
     this.scale.on('resize', this.resize, this);
     this.resize({width: window.innerWidth, height: window.innerHeight});
@@ -128,6 +146,7 @@ class BootScene extends Scene {
     this.input.once('pointerdown', () => {
       this.sound.play('forest-ambience', { loop: true });
       this.scene.start('scene-level1');
+      // this.scene.start('scene-level4a');
     });
   }
 

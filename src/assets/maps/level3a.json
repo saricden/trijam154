@@ -65,22 +65,22 @@
                         {
                          "name":"link1",
                          "type":"string",
-                         "value":"3"
+                         "value":"restart"
                         }, 
                         {
                          "name":"link2",
                          "type":"string",
-                         "value":"restart"
+                         "value":"3"
                         }, 
                         {
                          "name":"option1",
                          "type":"string",
-                         "value":"Well, yes"
+                         "value":"Not really"
                         }, 
                         {
                          "name":"option2",
                          "type":"string",
-                         "value":"Not really"
+                         "value":"Well, yes"
                         }],
                  "rotation":0,
                  "type":"",

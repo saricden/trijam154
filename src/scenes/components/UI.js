@@ -12,6 +12,24 @@ class UI extends Scene {
   create() {
     const {width, height} = this.game.scale;
 
+    this.topBarGfx = this.add.graphics();
+    this.topBarGfx.fillStyle(0xFFFFFF, 0.5);
+    this.topBarGfx.fillRect(0, 0, width, 48);
+
+    this.coinText = this.add.text(0, 0, '  x 0', {
+      fontFamily: 'monospace',
+      fontSize: 22,
+      color: '#000',
+      padding: {
+        x: 20,
+        y: 10
+      }
+    });
+    this.coinText.setOrigin(0, 0);
+
+    this.coinIcon = this.add.image(24, 23, 'coin-icon');
+    this.coinIcon.setScale(0.25);
+
     this.dialogText = this.add.text(0, 0, '', {
       fontFamily: 'serif',
       fontSize: 22,
@@ -205,6 +223,10 @@ class UI extends Scene {
     this.option2Btn.setFixedSize(width / 2 - 15, 0);
     this.option1Btn.setPosition(10, height - 10);
     this.option2Btn.setPosition(width - 10, height - 10);
+
+    this.topBarGfx.clear();
+    this.topBarGfx.fillStyle(0xFFFFFF, 0.5);
+    this.topBarGfx.fillRect(0, 0, width, 48);
   }
 
   triggerDialog(text, option1Text = null, option1Key = null, option2Text = null, option2Key = null) {
@@ -273,6 +295,10 @@ class UI extends Scene {
       alpha: 0,
       duration: 500
     });
+  }
+
+  update() {
+    this.coinText.setText(`  x ${this.registry.gold}`);
   }
 }
 

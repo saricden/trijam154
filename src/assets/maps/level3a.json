@@ -86,8 +86,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":188.666666666667,
-                 "y":92.3333333333333
+                 "x":188.667,
+                 "y":92.3333
                 }, 
                 {
                  "height":0,
@@ -103,29 +103,29 @@
                         {
                          "name":"link1",
                          "type":"string",
-                         "value":"4"
+                         "value":"restart"
                         }, 
                         {
                          "name":"link2",
                          "type":"string",
-                         "value":"restart"
+                         "value":"4"
                         }, 
                         {
                          "name":"option1",
                          "type":"string",
-                         "value":"Tell me"
+                         "value":"I'm not interested"
                         }, 
                         {
                          "name":"option2",
                          "type":"string",
-                         "value":"I'm not interested"
+                         "value":"Tell me"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
                  "x":180,
-                 "y":998.666666666667
+                 "y":998.667
                 }, 
                 {
                  "height":0,
@@ -163,7 +163,7 @@
                  "visible":true,
                  "width":0,
                  "x":548,
-                 "y":513.333333333333
+                 "y":513.333
                 }, 
                 {
                  "height":0,

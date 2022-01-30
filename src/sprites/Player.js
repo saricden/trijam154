@@ -21,15 +21,13 @@ class Player extends Sprite {
     this.target.play('flames-burn');
 
     this.scene.input.on('pointerdown', ({y, worldX, worldY}) => {
-      if (y < this.scene.game.scale.height - 50) { 
-        this.targetX = worldX;
-        this.targetY = worldY;
-        this.target.setAlpha(1);
-        this.target.setPosition(worldX, worldY);
-        this.scene.sound.play('sfx-flames', {
-          volume: 0.25
-        });
-      }
+      this.targetX = worldX;
+      this.targetY = worldY;
+      this.target.setAlpha(1);
+      this.target.setPosition(worldX, worldY);
+      this.scene.sound.play('sfx-flames', {
+        volume: 0.25
+      });
     });
 
     this.on('animationupdate', ({ key }, { index }) => {

@@ -195,7 +195,11 @@ class UI extends Scene {
   resize({width, height}) {
     this.cameras.resize(width, height);
 
-    this.dialogText.setWordWrapWidth(width);
+    this.dialogText.setWordWrapWidth(width * 0.75);
+    this.option1Btn.setWordWrapWidth(width / 2 - 55, true);
+    this.option1Btn.setFixedSize(width / 2 - 15, 0);
+    this.option2Btn.setWordWrapWidth(width / 2 - 55, true);
+    this.option2Btn.setFixedSize(width / 2 - 15, 0);
     this.option1Btn.setPosition(10, height - 10);
     this.option2Btn.setPosition(width - 10, height - 10);
   }

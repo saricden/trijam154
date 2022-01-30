@@ -73,19 +73,21 @@ class Level extends Scene {
       else if (object.name === 'title') {
         const {x, y, text} = object;
         
-        this.title = this.add.text(x, y, text.text, {
+        this.title = this.add.text(x + 100, y, text.text, {
           fontFamily: 'monospace',
           fontSize: 24,
           color: 'rgba(0, 0, 0, 0.6)',
-          align: 'right'
+          align: 'left'
         });
 
-        this.subtitle = this.add.text(x, y + this.title.displayHeight, 'A game of exploration\nby Kirk M. (@saricden)', {
+        this.title.setOrigin(1, 0);
+
+        this.subtitle = this.add.text(x - 3, y + this.title.displayHeight + 10, 'A game of exploration\nby Kirk M. (@saricden)', {
           fontFamily: 'sans-serif',
           fontStyle: 'bold',
           fontSize: 16,
           color: 'rgba(0, 0, 0, 0.6)',
-          align: 'right'
+          align: 'left'
         });
       }
       else if (object.name === 'guide') {

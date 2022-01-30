@@ -841,10 +841,10 @@
   <object id="3" name="npc-vector" x="180" y="998.667">
    <properties>
     <property name="dialog" value="Hmm, well I guess you've followed me this far... I can give you a clue."/>
-    <property name="link1" value="4"/>
-    <property name="link2" value="restart"/>
-    <property name="option1" value="Tell me"/>
-    <property name="option2" value="I'm not interested"/>
+    <property name="link1" value="restart"/>
+    <property name="link2" value="4"/>
+    <property name="option1" value="I'm not interested"/>
+    <property name="option2" value="Tell me"/>
    </properties>
    <point/>
   </object>

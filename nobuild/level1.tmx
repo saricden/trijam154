@@ -730,7 +730,7 @@
   </object>
   <object id="2" name="npc-vector" x="247.333" y="784.667">
    <properties>
-    <property name="dialog" value="Would you care to join me in a journey of intrigue?"/>
+    <property name="dialog" value="Would you care to join me on a journey of intrigue?"/>
     <property name="link1" value="3"/>
     <property name="link2" value="4"/>
     <property name="option1" value="Sure"/>
@@ -817,9 +817,9 @@ If you had to choose between losing a hand, and losing a foot, which would you l
   <object id="13" name="merch" x="1064.33" y="99.3333">
    <point/>
   </object>
-  <object id="14" name="title" x="28" y="967" width="98.38" height="38">
-   <text wrap="1" color="#b4000000" halign="right">In Search of
-Explanation</text>
+  <object id="14" name="title" x="97" y="964.667" width="98.38" height="38">
+   <text wrap="1" color="#b4000000" halign="right">Ever in
+Search</text>
   </object>
   <object id="15" name="guide" x="129.146" y="806.5" width="92.375" height="28">
    <text fontfamily="Sans Serif" pixelsize="11" wrap="1">Click / tap

@@ -60,7 +60,7 @@
                         {
                          "name":"dialog",
                          "type":"string",
-                         "value":"Would you care to join me in a journey of intrigue?"
+                         "value":"Would you care to join me on a journey of intrigue?"
                         }, 
                         {
                          "name":"link1",
@@ -364,14 +364,14 @@
                     {
                      "color":"#b4000000",
                      "halign":"right",
-                     "text":"In Search of\nExplanation",
+                     "text":"Ever in\nSearch",
                      "wrap":true
                     },
                  "type":"",
                  "visible":true,
                  "width":98.38,
-                 "x":28,
-                 "y":967
+                 "x":97,
+                 "y":964.666666666667
                 }, 
                 {
                  "height":28,

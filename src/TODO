@@ -48,13 +48,15 @@
   ✔ Includes a dialog with the NPC popup available via a function @done(22-01-29 20:39)
   ☐ Expandable volume slider
 
-☐ Fixes for mobile UI:
-  ☐ Buttons overlapping
+✔ Fixes for mobile UI: @done(22-01-29 21:37)
+  ✔ Buttons overlapping @done(22-01-29 21:37)
 
 ☐ Fixes for desktop UI (~1920x1080):
   ☐ Maps too small, showing past bounds on zoom out
 
-☐ Title screen elements embeded into start of first map
+☐ Finish up all level branches (jungle, etc.)
+
+✔ Title screen elements embeded into start of first map @done(22-01-29 21:37)
 
 ☐ Rate assets on Itch / Opengameart
 

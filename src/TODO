@@ -1,0 +1,69 @@
+✔ Test-record stream @done(22-01-29 07:39)
+
+✔ Discord blast, sorry not sorry @done(22-01-29 07:46)
+
+✔ Tweet, sorry not sorry @done(22-01-29 07:47)
+
+✔ Introduce Trijam 154 and game idea @done(22-01-29 07:51)
+
+✔ Install latest PhaserJS @done(22-01-29 07:55)
+
+✔ Build responsiveness systems @done(22-01-29 08:12)
+  ✔ Phaser scale mode + document CSS @done(22-01-29 08:02)
+  ✔ "onresize" event - hook in with scene event @done(22-01-29 08:12)
+  ✔ Resize camera, reposition UI elements on resize @done(22-01-29 08:12)
+
+☐ Find some open graphics (NOTE THEM 4 CREDITS)
+  ✔ 8 - directional walk cycle character(s) if possible @done(22-01-29 08:19)
+  ☐ Flag sprite (waving anim if possible)
+  ✔ Some nice tileset(s) for the world @done(22-01-29 08:19)
+  ☐ Maybe a good pixel-font?
+  ☐ Main theme music
+
+☐ Generic Player class:
+  ☐ Can walk by clicking / touching point on the screen
+    ☐ Add flag to click / touch position on screen
+    ☐ If click on NPC, walk to them, stop, and initialize _that step_ of dialog, with choices...
+  ☐ Velocity-based animation code
+
+☐ Generic NPC class:
+  ☐ Defined by a "dialogVectorTree"
+  ☐ Starts at the "root" vector
+  ☐ Runs through the dialog
+  ☐ Prompts with options (one - three?)
+  ☐ Moves and animates to next dialog point (linked in player-selected dialog option)
+
+☐ Generic Level class:
+  ☐ Read map JSON from key
+  ☐ Use same tileset (extruded)
+  ☐ Parse main character start, NPC dialogs / points from map object layer: "points"
+    ☐ Parse _branching_ dialogs / points
+    ☐ Add Player class instance @ Player position
+    ☐ Add NPC at map's first dialog point
+  ☐ Add physics collisions between main character and "solid" layer
+  ☐ Launch the UI system...
+
+☐ UI class:
+  ☐ Runs in parallel to Level class
+  ☐ Includes a dialog with the NPC popup available via a function
+  ☐ Pause menu
+    ☐ Volume control
+    ☐ (Save & ) Return to title screen
+
+☐ Conditional game save data:
+  ☐ Check if localStorage is available
+  ☐ Enable / disable scenne registry saveData functions based on that
+  ☐ Write function to check if saveData is enabled
+
+☐ Title screen...
+  ☐ This game is an ... title
+  ☐ Instructions to play
+  ☐ New Game / Continue Button (if this.registry.isDataEnabled())
+  ☐ Play Game Button (if !this.registry.isDataEnabled())
+
+☐ Rate assets on Itch / Opengameart
+
+☐ After top secret other project launches...
+  ☐ Update title
+  ☐ Re-publish as embed (if possible)
+

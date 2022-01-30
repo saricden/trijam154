@@ -1,0 +1,94 @@
+{ "frames": {
+   "0": {
+    "frame": { "x": 94, "y": 2, "w": 42, "h": 30 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 14, "y": 22, "w": 38, "h": 26 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "1": {
+    "frame": { "x": 2, "y": 2, "w": 44, "h": 30 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 14, "y": 22, "w": 40, "h": 26 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "2": {
+    "frame": { "x": 90, "y": 34, "w": 42, "h": 29 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 14, "y": 23, "w": 38, "h": 25 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "3": {
+    "frame": { "x": 90, "y": 65, "w": 42, "h": 29 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 14, "y": 23, "w": 38, "h": 25 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "4": {
+    "frame": { "x": 2, "y": 34, "w": 42, "h": 30 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 14, "y": 22, "w": 38, "h": 26 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "5": {
+    "frame": { "x": 48, "y": 2, "w": 44, "h": 30 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 14, "y": 22, "w": 40, "h": 26 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "6": {
+    "frame": { "x": 2, "y": 66, "w": 42, "h": 29 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 14, "y": 23, "w": 38, "h": 25 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "7": {
+    "frame": { "x": 46, "y": 66, "w": 42, "h": 29 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 14, "y": 23, "w": 38, "h": 25 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "8": {
+    "frame": { "x": 46, "y": 34, "w": 42, "h": 30 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 14, "y": 22, "w": 38, "h": 26 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.29-x64",
+  "image": "Samurai Merchant.png",
+  "format": "RGBA8888",
+  "size": { "w": 136, "h": 95 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "merch-idle", "from": 0, "to": 3, "direction": "forward" },
+   { "name": "merch-walk", "from": 4, "to": 8, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "items", "opacity": 255, "blendMode": "normal" },
+   { "name": "merchant", "opacity": 255, "blendMode": "normal" },
+   { "name": "rope", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

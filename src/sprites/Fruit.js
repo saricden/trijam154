@@ -1,22 +1,20 @@
 import { GameObjects } from "phaser";
 const { Sprite } = GameObjects;
 
-class Coin extends Sprite {
-  constructor(scene, x, y) {
-    super(scene, x, y, 'coin');
+class Fruit extends Sprite {
+  constructor(scene, x, y, id) {
+    super(scene, x, y, 'fruit', id);
 
     this.scene = scene;
 
     this.scene.add.existing(this);
     this.scene.physics.world.enable(this);
 
-    this.setScale(0.15);
     this.setOrigin(0.5, 1);
 
-    this.play('coin-spin');
-
     this.setData('isCollected', false);
+    this.setData('fruit_id', id);
   }
 }
 
-export default Coin;
+export default Fruit;

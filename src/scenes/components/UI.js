@@ -15,20 +15,23 @@ class UI extends Scene {
     this.topBarGfx = this.add.graphics();
     this.topBarGfx.fillStyle(0xFFFFFF, 0.5);
     this.topBarGfx.fillRect(0, 0, width, 48);
-
-    this.coinText = this.add.text(0, 0, '  x 0', {
-      fontFamily: 'monospace',
-      fontSize: 22,
-      color: '#000',
-      padding: {
-        x: 20,
-        y: 10
+    this.fruits = this.add.group();
+    
+    this.registry.fruitsCollected.forEach((hasFruit, i) => {
+      const fruit = this.add.sprite(i * width / 16 + 16, 24, 'fruit', i);
+      
+      if (!hasFruit) {
+        fruit.setAlpha(0.35);
       }
-    });
-    this.coinText.setOrigin(0, 0);
+      else {
+        fruit.setAlpha(1);
+        fruit.setScale(2);
+      }
 
-    this.coinIcon = this.add.image(24, 23, 'coin-icon');
-    this.coinIcon.setScale(0.25);
+      fruit.setData('fruitIndex', i);
+
+      this.fruits.add(fruit);
+    });
 
     this.dialogText = this.add.text(0, 0, '', {
       fontFamily: 'serif',
@@ -227,6 +230,24 @@ class UI extends Scene {
     this.topBarGfx.clear();
     this.topBarGfx.fillStyle(0xFFFFFF, 0.5);
     this.topBarGfx.fillRect(0, 0, width, 48);
+    
+    // const fruit = this.add.sprite(i * width / 16 + 16, 24, 'fruit', i);
+
+    this.registry.fruitsCollected.forEach((hasFruit, i) => {
+      const fruit = this.fruits.getChildren()[i];
+      
+      if (fruit) {
+        fruit.setPosition(i * width / 16 + 16, 24);
+        
+        if (!hasFruit) {
+          fruit.setAlpha(0.35);
+        }
+        else {
+          fruit.setAlpha(1);
+          fruit.setScale(2);
+        }
+      }
+    });
   }
 
   triggerDialog(text, option1Text = null, option1Key = null, option2Text = null, option2Key = null) {
@@ -286,6 +307,19 @@ class UI extends Scene {
     }
   }
 
+  addFruit(fruitIndex) {
+    console.log(fruitIndex);
+    const uiFruit = this.fruits.getChildren()[parseInt(fruitIndex, 10)];
+    this.registry.fruitsCollected[fruitIndex] = true;
+
+    this.tweens.add({
+      targets: uiFruit,
+      alpha: 1,
+      scale: 2,
+      duration: 1000
+    });
+  }
+
   chooseKey(optionKey) {
     this.parentScene.npc.setVectorKey(optionKey);
     this.option1Key = false;
@@ -295,10 +329,6 @@ class UI extends Scene {
       alpha: 0,
       duration: 500
     });
-  }
-
-  update() {
-    this.coinText.setText(`  x ${this.registry.gold}`);
   }
 }
 

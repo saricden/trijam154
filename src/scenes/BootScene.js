@@ -33,9 +33,10 @@ import sfxFlames from '../assets/audio/foom_0.wav';
 import merchPNG from '../assets/sprites/Samurai Merchant.png';
 import merchJSON from '../assets/sprites/Samurai Merchant.json';
 import fart from '../assets/audio/whoopee_2.wav';
-import goldCoin from '../assets/sprites/01coin.png';
-import sfxCoin from '../assets/audio/completetask_0.mp3';
-import coinIcon from '../assets/ui/coin-icon.png';
+import fruits from '../assets/sprites/Fruit.png';
+import fruit0Sfx from '../assets/audio/cloth-inventory.wav';
+import pluginSfx from '../assets/audio/Plug-in.wav';
+import plugoutSfx from '../assets/audio/Plug-out.wav';
 
 class BootScene extends Scene {
   constructor() {
@@ -50,9 +51,9 @@ class BootScene extends Scene {
       frameHeight: 24
     });
     this.load.aseprite('merch', merchPNG, merchJSON);
-    this.load.spritesheet('coin', goldCoin, {
-      frameWidth: 120,
-      frameHeight: 120
+    this.load.spritesheet('fruit', fruits, {
+      frameWidth: 16,
+      frameHeight: 16
     });
 
     // Map stuff
@@ -84,10 +85,9 @@ class BootScene extends Scene {
     this.load.audio('sfx-spell5', spell5);
     this.load.audio('sfx-flames', sfxFlames);
     this.load.audio('sfx-fart', fart);
-    this.load.audio('sfx-coin', sfxCoin);
-
-    // UI
-    this.load.image('coin-icon', coinIcon);
+    this.load.audio('sfx-fruit0', fruit0Sfx);
+    this.load.audio('sfx-plugin', pluginSfx);
+    this.load.audio('sfx-plugout', plugoutSfx);
 
     // Preloader
     this.loader = this.add.text(window.innerWidth / 2, window.innerHeight / 2, '0%', {
@@ -126,19 +126,13 @@ class BootScene extends Scene {
       repeat: -1
     });
 
-    this.anims.create({
-      key: 'coin-spin',
-      frames: this.anims.generateFrameNumbers('coin', { start: 0, end: 7 }),
-      frameRate: 18,
-      repeat: -1
-    });
-
     // Resize / reposition UI elements for screen
     this.scale.on('resize', this.resize, this);
     this.resize({width: window.innerWidth, height: window.innerHeight});
 
     // Setup global game data
     this.registry.gold = 0;
+    this.registry.fruitsCollected = new Array(16).fill(false);
 
     // Start game
     this.loader2.setText('Ready, press anywhere to start.');

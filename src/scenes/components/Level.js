@@ -2,7 +2,7 @@ import { Scene } from "phaser";
 import Player from "../../sprites/Player";
 import NPC from "../../sprites/NPC";
 import Merch from "../../sprites/Merch";
-import Coin from "../../sprites/Coin";
+import Fruit from "../../sprites/Fruit";
 
 class Level extends Scene {
   constructor(mapKey, { tilemapKey, bgmKey = null, tilesetName = 'gentle forest, rabite palette', tilesetKey = 'tileset-rabite' }) {
@@ -36,7 +36,7 @@ class Level extends Scene {
 
     this.player = null;
     this.dialogVectorTree = {};
-    this.coins = this.add.group();
+    this.fruits = this.add.group();
 
     this.map.getObjectLayer('points').objects.forEach((object, i) => {
       if (object.name === 'player') {
@@ -100,12 +100,20 @@ class Level extends Scene {
           align: 'center'
         });
       }
-      else if (object.name === 'coin') {
+      else if (object.name === 'fruit') {
         const {x, y} = object;
 
-        const coin = new Coin(this, x, y);
+        console.log(object);
 
-        this.coins.add(coin);
+        console.log(object.properties.find((prop) => {
+          return prop.name === 'fruit_id'
+        }).value);
+
+        const fruit = new Fruit(this, x, y, object.properties.find((prop) => {
+          return prop.name === 'fruit_id'
+        }).value);
+
+        this.fruits.add(fruit);
       }
     });
     
@@ -117,7 +125,7 @@ class Level extends Scene {
     this.physics.add.collider(this.player, this.mapGround);
 
     // Overlaps
-    this.physics.add.overlap(this.player, this.coins, this.collectCoin, null, this);
+    this.physics.add.overlap(this.player, this.fruits, this.collectFruit, null, this);
 
     // Camera config
     this.cameras.main.setZoom(1.5);
@@ -142,20 +150,23 @@ class Level extends Scene {
     this.cameras.resize(width, height);
   }
 
-  collectCoin(player, coin) {
-    if (!coin.getData('isCollected')) {
+  collectFruit(player, fruit) {
+    if (!fruit.getData('isCollected')) {
       this.registry.gold++;
-      coin.setData('isCollected', true);
-      this.sound.play('sfx-coin');
+      fruit.setData('isCollected', true);
+      this.sound.play(`sfx-fruit${fruit.getData('fruit_id')}`);
+      console.log(fruit);
       
       this.tweens.add({
-        targets: coin,
+        targets: fruit,
         alpha: 0,
-        y: coin.y - 75,
+        y: fruit.y - 75,
         duration: 300,
         onComplete: () => {
-          this.coins.remove(coin);
-          coin.destroy();
+          this.ui.addFruit(fruit.getData('fruit_id'));
+          this.fruits.remove(fruit);
+          fruit.destroy();
+          player.syncYoyoAnim('death');//.then(() => ????));
         }
       });
     }
@@ -172,8 +183,8 @@ class Level extends Scene {
     this.player.target.setDepth(this.player.target.y + 1);
     this.npc.setDepth(this.npc.y + 1);
     if (this.merch) this.merch.setDepth(this.merch.y + 1);
-    this.coins.getChildren().forEach((coin) => {
-      coin.setDepth(coin.y + 1);
+    this.fruits.getChildren().forEach((fruit) => {
+      fruit.setDepth(fruit.y + 1);
     });
     this.mapBG.setDepth(1);
     this.mapGround.setDepth(0);

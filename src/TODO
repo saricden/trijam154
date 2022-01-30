@@ -13,53 +13,48 @@
   ✔ "onresize" event - hook in with scene event @done(22-01-29 08:12)
   ✔ Resize camera, reposition UI elements on resize @done(22-01-29 08:12)
 
-☐ Find some open graphics (NOTE THEM 4 CREDITS)
+☐ Find some open assets (NOTE THEM 4 CREDITS)
   ✔ 8 - directional walk cycle character(s) if possible @done(22-01-29 08:19)
-  ☐ Flag sprite (waving anim if possible)
+  ✔ Flag sprite (waving anim if possible) (flames) @done(22-01-29 20:37)
   ✔ Some nice tileset(s) for the world @done(22-01-29 08:19)
   ☐ Maybe a good pixel-font?
-  ☐ Main theme music
+  ✔ Main theme music @done(22-01-29 20:37)
 
-☐ Generic Player class:
-  ☐ Can walk by clicking / touching point on the screen
-    ☐ Add flag to click / touch position on screen
-    ☐ If click on NPC, walk to them, stop, and initialize _that step_ of dialog, with choices...
-  ☐ Velocity-based animation code
+✔ Generic Player class: @done(22-01-29 20:37)
+  ✔ Can walk by clicking / touching point on the screen @done(22-01-29 20:37)
+    ✔ Add flag to click / touch position on screen @done(22-01-29 20:37)
+    ✔ If click on NPC, walk to them, stop, and initialize _that step_ of dialog, with choices... @done(22-01-29 20:37)
+  ✔ Velocity-based animation code @done(22-01-29 20:37)
 
-☐ Generic NPC class:
-  ☐ Defined by a "dialogVectorTree"
-  ☐ Starts at the "root" vector
-  ☐ Runs through the dialog
-  ☐ Prompts with options (one - three?)
-  ☐ Moves and animates to next dialog point (linked in player-selected dialog option)
+✔ Generic NPC class: @done(22-01-29 20:37)
+  ✔ Defined by a "dialogVectorTree" @done(22-01-29 20:37)
+  ✔ Starts at the "root" vector @done(22-01-29 20:37)
+  ✔ Runs through the dialog @done(22-01-29 20:37)
+  ✔ Prompts with options (one - three?) (one - two.) @done(22-01-29 20:37)
+  ✔ Moves and animates to next dialog point (linked in player-selected dialog option) @done(22-01-29 20:38)
 
-☐ Generic Level class:
-  ☐ Read map JSON from key
-  ☐ Use same tileset (extruded)
-  ☐ Parse main character start, NPC dialogs / points from map object layer: "points"
-    ☐ Parse _branching_ dialogs / points
-    ☐ Add Player class instance @ Player position
-    ☐ Add NPC at map's first dialog point
-  ☐ Add physics collisions between main character and "solid" layer
-  ☐ Launch the UI system...
+✔ Generic Level class: @done(22-01-29 20:38)
+  ✔ Read map JSON from key @done(22-01-29 20:38)
+  ✔ Use same tileset (extruded) (different tilesets) @done(22-01-29 20:38)
+  ✔ Parse main character start, NPC dialogs / points from map object layer: "points" @done(22-01-29 20:39)
+    ✔ Parse _branching_ dialogs / points @done(22-01-29 20:39)
+    ✔ Add Player class instance @ Player position @done(22-01-29 20:39)
+    ✔ Add NPC at map's first dialog point @done(22-01-29 20:39)
+  ✔ Add physics collisions between main character and "solid" layer @done(22-01-29 20:39)
+  ✔ Launch the UI system... @done(22-01-29 20:39)
 
-☐ UI class:
-  ☐ Runs in parallel to Level class
-  ☐ Includes a dialog with the NPC popup available via a function
-  ☐ Pause menu
-    ☐ Volume control
-    ☐ (Save & ) Return to title screen
+✔ UI class: @done(22-01-29 20:39)
+  ✔ Runs in parallel to Level class @done(22-01-29 20:39)
+  ✔ Includes a dialog with the NPC popup available via a function @done(22-01-29 20:39)
+  ☐ Expandable volume slider
 
-☐ Conditional game save data:
-  ☐ Check if localStorage is available
-  ☐ Enable / disable scenne registry saveData functions based on that
-  ☐ Write function to check if saveData is enabled
+☐ Fixes for mobile UI:
+  ☐ Buttons overlapping
 
-☐ Title screen...
-  ☐ This game is an ... title
-  ☐ Instructions to play
-  ☐ New Game / Continue Button (if this.registry.isDataEnabled())
-  ☐ Play Game Button (if !this.registry.isDataEnabled())
+☐ Fixes for desktop UI (~1920x1080):
+  ☐ Maps too small, showing past bounds on zoom out
+
+☐ Title screen elements embeded into start of first map
 
 ☐ Rate assets on Itch / Opengameart
 

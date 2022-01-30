@@ -925,12 +925,6 @@ Search</text>
    <text fontfamily="Sans Serif" pixelsize="11" wrap="1">Click / tap
 to play.</text>
   </object>
-  <object id="24" name="fruit" x="1275" y="855">
-   <properties>
-    <property name="fruit_id" value="0"/>
-   </properties>
-   <point/>
-  </object>
  </objectgroup>
  <layer id="4" name="foreground" width="125" height="125">
   <data encoding="csv">

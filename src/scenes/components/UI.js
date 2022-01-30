@@ -33,6 +33,25 @@ class UI extends Scene {
       this.fruits.add(fruit);
     });
 
+    this.muteButton = this.add.sprite(width - 24, 72, 'ui-audio-on');
+
+    if (this.sound.volume === 0) {
+      this.muteButton.setTexture('ui-audio-off');
+    }
+
+    this.muteButton.setInteractive();
+
+    this.muteButton.on('pointerdown', () => {
+      if (this.sound.volume === 0) {
+        this.sound.setVolume(1);
+        this.muteButton.setTexture('ui-audio-on');
+      }
+      else {
+        this.sound.setVolume(0);
+        this.muteButton.setTexture('ui-audio-off');
+      }
+    });
+
     this.dialogText = this.add.text(0, 0, '', {
       fontFamily: 'serif',
       fontSize: 22,
@@ -308,13 +327,14 @@ class UI extends Scene {
   }
 
   addFruit(fruitIndex) {
-    console.log(fruitIndex);
     const uiFruit = this.fruits.getChildren()[parseInt(fruitIndex, 10)];
     this.registry.fruitsCollected[fruitIndex] = true;
 
+    uiFruit.setScale(8);
+    uiFruit.setAlpha(1);
+
     this.tweens.add({
       targets: uiFruit,
-      alpha: 1,
       scale: 2,
       duration: 1000
     });

@@ -13,11 +13,10 @@
   ✔ "onresize" event - hook in with scene event @done(22-01-29 08:12)
   ✔ Resize camera, reposition UI elements on resize @done(22-01-29 08:12)
 
-☐ Find some open assets (NOTE THEM 4 CREDITS)
+✔ Find some open assets (NOTE THEM 4 CREDITS) @done(22-01-30 03:39)
   ✔ 8 - directional walk cycle character(s) if possible @done(22-01-29 08:19)
   ✔ Flag sprite (waving anim if possible) (flames) @done(22-01-29 20:37)
   ✔ Some nice tileset(s) for the world @done(22-01-29 08:19)
-  ☐ Maybe a good pixel-font?
   ✔ Main theme music @done(22-01-29 20:37)
 
 ✔ Generic Player class: @done(22-01-29 20:37)
@@ -46,13 +45,10 @@
 ✔ UI class: @done(22-01-29 20:39)
   ✔ Runs in parallel to Level class @done(22-01-29 20:39)
   ✔ Includes a dialog with the NPC popup available via a function @done(22-01-29 20:39)
-  ☐ Expandable volume slider
+  ✔ Mute button @done(22-01-30 03:50)
 
 ✔ Fixes for mobile UI: @done(22-01-29 21:37)
   ✔ Buttons overlapping @done(22-01-29 21:37)
-
-☐ Fixes for desktop UI (~1920x1080):
-  ☐ Maps too small, showing past bounds on zoom out
 
 ☐ Finish up all level branches (jungle, etc.)
 
@@ -60,7 +56,15 @@
 
 ✔ Put dialog text on bottom of screen ("behind" buttons) @done(22-01-29 22:11)
 
-☐ Coin system w/ merch ending
+☐ Collect all the fruit, and take to merch for 3rd ending
+  ☐ Divide all 16 fruit_id between levels:
+    ✔ 2a - 1, 7, 9 @done(22-01-30 03:37)
+    ☐ 2b - 
+    ✔ 3a - 3, 6 @done(22-01-30 03:37)
+    ☐ 3b
+    ☐ 4a
+    ☐ 4b
+  ☐ Setup merch to check for all 16 fruit, then teleport to level4c 
 
 ☐ Rate assets on Itch / Opengameart
 

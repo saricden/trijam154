@@ -34,9 +34,11 @@ import merchPNG from '../assets/sprites/Samurai Merchant.png';
 import merchJSON from '../assets/sprites/Samurai Merchant.json';
 import fart from '../assets/audio/whoopee_2.wav';
 import fruits from '../assets/sprites/Fruit.png';
-import fruit0Sfx from '../assets/audio/cloth-inventory.wav';
+import fruit7Sfx from '../assets/audio/Menu Select 1.wav';
 import pluginSfx from '../assets/audio/Plug-in.wav';
 import plugoutSfx from '../assets/audio/Plug-out.wav';
+import audioOnIcon from '../assets/ui/audioOn.png';
+import audioOffIcon from '../assets/ui/audioOff.png';
 
 class BootScene extends Scene {
   constructor() {
@@ -85,9 +87,13 @@ class BootScene extends Scene {
     this.load.audio('sfx-spell5', spell5);
     this.load.audio('sfx-flames', sfxFlames);
     this.load.audio('sfx-fart', fart);
-    this.load.audio('sfx-fruit0', fruit0Sfx);
+    this.load.audio('sfx-fruit', fruit7Sfx);
     this.load.audio('sfx-plugin', pluginSfx);
     this.load.audio('sfx-plugout', plugoutSfx);
+
+    // UI Stuff
+    this.load.image('ui-audio-on', audioOnIcon);
+    this.load.image('ui-audio-off', audioOffIcon);
 
     // Preloader
     this.loader = this.add.text(window.innerWidth / 2, window.innerHeight / 2, '0%', {
@@ -140,7 +146,7 @@ class BootScene extends Scene {
     this.input.once('pointerdown', () => {
       this.sound.play('forest-ambience', { loop: true });
       this.scene.start('scene-level1');
-      // this.scene.start('scene-level4a');
+      // this.scene.start('scene-level3a');
     });
   }
 

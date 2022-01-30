@@ -7,8 +7,10 @@ class Fruit extends Sprite {
 
     this.scene = scene;
 
-    this.scene.add.existing(this);
-    this.scene.physics.world.enable(this);
+    if (!this.scene.registry.fruitsCollected[parseInt(id, 10)]) {
+      this.scene.add.existing(this);
+      this.scene.physics.world.enable(this);
+    }
 
     this.setOrigin(0.5, 1);
 

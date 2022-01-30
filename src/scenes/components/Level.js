@@ -154,7 +154,7 @@ class Level extends Scene {
     if (!fruit.getData('isCollected')) {
       this.registry.gold++;
       fruit.setData('isCollected', true);
-      this.sound.play(`sfx-fruit${fruit.getData('fruit_id')}`);
+      this.sound.play('sfx-fruit');
       console.log(fruit);
       
       this.tweens.add({

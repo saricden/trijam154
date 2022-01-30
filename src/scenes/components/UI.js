@@ -22,8 +22,10 @@ class UI extends Scene {
         width
       }
     });
-
+    this.dialogText.setOrigin(0, 1);
     this.dialogText.setAlpha(0);
+
+    this.paddingGfx = this.add.graphics();
 
     this.option1Btn = this.add.text(10, height - 10, 'Option 1', {
       fontFamily: 'monospace',
@@ -81,7 +83,7 @@ class UI extends Scene {
         this.parentScene.merch.willTalk = false;
         if (this.registry.gold >= 27) {
           this.tweens.add({
-            targets: [this.dialogText, this.option2Btn],
+            targets: [this.dialogText, this.paddingGfx, this.option2Btn],
             alpha: 0,
             duration: 500,
             onComplete: () => {
@@ -104,7 +106,7 @@ class UI extends Scene {
         else {
           this.parentScene.merch.willTalk = false;
           this.tweens.add({
-            targets: [this.dialogText, this.option2Btn],
+            targets: [this.dialogText, this.paddingGfx, this.option2Btn],
             alpha: 0,
             duration: 500,
             onComplete: () => {
@@ -137,7 +139,7 @@ class UI extends Scene {
       }
       else {
         this.tweens.add({
-          targets: [this.dialogText, this.option2Btn],
+          targets: [this.dialogText, this.paddingGfx, this.option2Btn],
           alpha: 0,
           duration: 500,
           onComplete: () => this.chooseKey(this.option1Key)
@@ -155,7 +157,7 @@ class UI extends Scene {
       if (this.option2Key === 'cancel-merch') {
         this.parentScene.merch.willTalk = false;
         this.tweens.add({
-          targets: [this.dialogText, this.option1Btn],
+          targets: [this.dialogText, this.paddingGfx, this.option1Btn],
           alpha: 0,
           duration: 500,
           onComplete: () => {
@@ -176,7 +178,7 @@ class UI extends Scene {
       else {
         this.parentScene.npc.willTalk = false;
         this.tweens.add({
-          targets: [this.dialogText, this.option1Btn],
+          targets: [this.dialogText, this.paddingGfx, this.option1Btn],
           alpha: 0,
           duration: 500,
           onComplete: () => this.chooseKey(this.option2Key)
@@ -195,16 +197,19 @@ class UI extends Scene {
   resize({width, height}) {
     this.cameras.resize(width, height);
 
-    this.dialogText.setWordWrapWidth(width * 0.75);
-    this.option1Btn.setWordWrapWidth(width / 2 - 55, true);
+    this.dialogText.setWordWrapWidth(width - 40); // padding on both sides
+    this.dialogText.setFixedSize(width, 0);
+    this.option1Btn.setWordWrapWidth(width / 2 - 55); // padding on both sides + 5*2 for 10px gap
     this.option1Btn.setFixedSize(width / 2 - 15, 0);
-    this.option2Btn.setWordWrapWidth(width / 2 - 55, true);
+    this.option2Btn.setWordWrapWidth(width / 2 - 55);
     this.option2Btn.setFixedSize(width / 2 - 15, 0);
     this.option1Btn.setPosition(10, height - 10);
     this.option2Btn.setPosition(width - 10, height - 10);
   }
 
   triggerDialog(text, option1Text = null, option1Key = null, option2Text = null, option2Key = null) {
+    const {width, height} = this.game.scale;
+    
     this.dialogText.setText(text);
 
     if (this.option1Key === false) {
@@ -225,8 +230,17 @@ class UI extends Scene {
         this.option2Key = option2Key[0].value;
       }
 
+      const largerButtonHeight = (typeof option2Text === 'undefined' || !option2Text.length || this.option1Btn.displayHeight > this.option2Btn.displayHeight ? this.option1Btn.displayHeight : this.option2Btn.displayHeight);
+
+      this.dialogText.setPosition(0, height - largerButtonHeight - 10);
+
+      this.paddingGfx.clear();
+      this.paddingGfx.fillStyle(0x000000, 0.9);
+      this.paddingGfx.fillRect(0, height - largerButtonHeight - 10, width, largerButtonHeight + 20);
+      this.paddingGfx.setAlpha(0);
+
       this.tweens.add({
-        targets: this.dialogText,
+        targets: [this.dialogText, this.paddingGfx],
         alpha: 1,
         duration: 500,
         onComplete: () => {

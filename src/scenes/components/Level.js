@@ -82,7 +82,7 @@ class Level extends Scene {
 
         this.title.setOrigin(1, 0);
 
-        this.subtitle = this.add.text(x - 3, y + this.title.displayHeight + 10, 'A game of exploration\nby Kirk M. (@saricden)', {
+        this.subtitle = this.add.text(x - 2, y + this.title.displayHeight + 10, 'A game of exploration\nby Kirk M. (@saricden)', {
           fontFamily: 'sans-serif',
           fontStyle: 'bold',
           fontSize: 16,

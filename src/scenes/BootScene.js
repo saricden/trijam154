@@ -3,9 +3,11 @@ import stormHeadPNG from '../assets/sprites/StormHead.png';
 import stormHeadJSON from '../assets/sprites/StormHead.json';
 import tilesetRabite from '../assets/maps/tileset-rabite.png';
 import tilesetMoonlit from '../assets/maps/tileset-moonlit.png';
+import tilesetJungle from '../assets/maps/tileset-jungle.png';
 import tilesetCity from '../assets/maps/tileset-city.png';
 import level1JSON from '../assets/maps/level1.json';
 import level2aJSON from '../assets/maps/level2a.json';
+import level2bJSON from '../assets/maps/level2b.json';
 import level3aJSON from '../assets/maps/level3a.json';
 import level4aJSON from '../assets/maps/level4a.json';
 import ballChainPNG from '../assets/sprites/sci ball and chain.png';
@@ -61,9 +63,11 @@ class BootScene extends Scene {
     // Map stuff
     this.load.image('tileset-rabite', tilesetRabite);
     this.load.image('tileset-moonlit', tilesetMoonlit);
+    this.load.image('tileset-jungle', tilesetJungle);
     this.load.image('tileset-city', tilesetCity);
     this.load.tilemapTiledJSON('map-level1', level1JSON);
     this.load.tilemapTiledJSON('map-level2a', level2aJSON);
+    this.load.tilemapTiledJSON('map-level2b', level2bJSON);
     this.load.tilemapTiledJSON('map-level3a', level3aJSON);
     this.load.tilemapTiledJSON('map-level4a', level4aJSON);
 
@@ -145,8 +149,8 @@ class BootScene extends Scene {
 
     this.input.once('pointerdown', () => {
       this.sound.play('forest-ambience', { loop: true });
-      this.scene.start('scene-level1');
-      // this.scene.start('scene-level3a');
+      // this.scene.start('scene-level1');
+      this.scene.start('scene-level4a');
     });
   }
 
